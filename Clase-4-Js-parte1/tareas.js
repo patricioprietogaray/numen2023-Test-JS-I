@@ -168,13 +168,38 @@ function mesesDelAño(array) {
   // "Enero", "Marzo" y "Noviembre", guardarlo en nuevo array y retornarlo.
   //Si alguno de los meses no está, devolver: "No se encontraron los meses pedidos"
   // Tu código:
-  
+  let mesEnero=false;
+  let mesMarzo=false;
+  let mesNoviembre=false;
+  let arregloMeses=[];
+  array.map(mes=>{
+    switch(mes){
+      case "Enero":
+        mesEnero=true;
+        arregloMeses.push(mes);
+        break;
+      case "Marzo":
+        mesMarzo=true;
+        arregloMeses.push(mes);
+        break;
+      case "Noviembre":
+        mesNoviembre=true;
+        arregloMeses.push(mes);
+        break;
+    }
+  });
+  if(mesEnero===false || mesMarzo===false || mesNoviembre===false) {
+    return "No se encontraron los meses pedidos";
+  }
+  return arregloMeses;
 }
 
 function mayorACien(array) {
   //La función recibe un array con enteros entre 0 y 200. Recorrer el array y guardar en un nuevo array sólo los
   //valores mayores a 100 (no incluye el 100). Finalmente devolver el nuevo array.
   // Tu código:
+  const resultado = array.filter(elem => elem > 100);
+  return resultado;
 }
 
 // No modificar nada debajo de esta línea, de lo contrario no correrán los test.
