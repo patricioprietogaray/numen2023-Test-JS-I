@@ -99,18 +99,31 @@ function promedioResultadosTest(resultadosTest) {
   // "resultadosTest" debe ser una matriz de enteros (int/integers)
   // Itera (en un bucle) los elementos del array, calcula y devuelve el promedio de puntajes
   // Tu código:
-  
+  let suma=0;
+  resultadosTest.map(sumando => suma += sumando);
+  let promedio=suma / resultadosTest.length;
+  return promedio;  
 }
 
 function numeroMasGrande(numeros) {
   // "numeros" debe ser una matriz de enteros (int/integers)
   // Devuelve el número más grande
   // Tu código:
+  let numeroMasGrande=0;
+  numeros.map(nume => {
+    if (nume > numeroMasGrande){
+      numeroMasGrande=nume;
+    }
+  });
+  return numeroMasGrande;
 }
 
 function cuentoElementos(arreglo){
   //Realiza una función que retorne la cantidad de los elementos del arreglo cuyo valor es mayor a 19.
   //Escribe tu código aquí:
+  let cantidad=0;
+  arreglo.filter(elemento=>{if(elemento > 19){cantidad++;}});
+  return cantidad;
 }
 
 function diaDeLaSemana(numeroDeDia) {
