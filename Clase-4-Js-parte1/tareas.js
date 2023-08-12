@@ -31,7 +31,7 @@ function incrementarPorUno(array) {
   // Tu código:
   let arreglo=[];
   // let elemOrig=0;
-  for(i=0;i<array.length;i++){
+  for(let i=0;i<array.length;i++){
     // elemOrig=array[i];
     arreglo.push(array[i]+1);
   }
@@ -51,6 +51,8 @@ function agregarItemAlComienzoDelArray(array, elemento) {
   // y devuelve el array
   // Pista: usa el método `.unshift`
   // Tu código:
+  array.unshift(elemento);
+  return array;
 }
 
 function dePalabrasAFrase(palabras) {
@@ -59,12 +61,24 @@ function dePalabrasAFrase(palabras) {
   // con espacios entre cada palabra
   // Ejemplo: ['Hello', 'world!'] -> 'Hello world!'
   // Tu código:
+  let frase;
+  for(let i=0; i<palabras.length; i++) {
+    if (i===0) { frase=palabras[0]; }
+    if (i>0 && i<palabras.length) {
+      frase = frase + " " + palabras[i];
+    }
+  }
+  return frase;
 }
 
 function arrayContiene(array, elemento) {
   // Comprueba si el elemento existe dentro de "array"
   // Devuelve "true" si está, o "false" si no está
   // Tu código:
+  for(let i=0; i<array.length; i++) {
+    if (array[i] === elemento) { return true; }
+  }
+  return false;
 }
 
 function agregarNumeros(numeros) {
