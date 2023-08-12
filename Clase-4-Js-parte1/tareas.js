@@ -85,12 +85,21 @@ function agregarNumeros(numeros) {
   // "array" debe ser una matriz de enteros (int/integers)
   // Suma todos los enteros y devuelve el valor
   // Tu código:
+
+  //usando callback
+  let resultado=0;
+
+  // nume es el valor del elemento del array
+  // y lo sumo a resultado
+  numeros.map(nume => resultado += nume);
+  return resultado;
 }
 
 function promedioResultadosTest(resultadosTest) {
   // "resultadosTest" debe ser una matriz de enteros (int/integers)
   // Itera (en un bucle) los elementos del array, calcula y devuelve el promedio de puntajes
   // Tu código:
+  
 }
 
 function numeroMasGrande(numeros) {
