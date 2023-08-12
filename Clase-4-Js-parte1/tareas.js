@@ -3,11 +3,19 @@
 function devolverPrimerElemento(array) {
   // Devuelve el primer elemento de un array
   // Tu código:
+  return array[0];
 }
 
 function devolverUltimoElemento(array) {
   // Devuelve el último elemento de un array
   // Tu código:
+
+  // una manera
+  // let elementos = array.length;
+  // return array[elementos-1];
+
+  //otra manera
+  return array[array.length - 1];
 }
 
 function obtenerLargoDelArray(array) {
