@@ -199,11 +199,16 @@ const user = {
 //15 PASSED (HASTA ACÁ)
 
 function agregarMetodoCalculoDescuento(producto) {
-  // Agregar un método (función) al objeto "producto" llamado "calcularPrecioDescuento"
-  // Este método debe multiplicar el "precio" del "producto" 
-  //("producto.precio" o "producto[precio]") y "porcentajeDeDescuento" para obtener el descuento
-  // El método resta el descuento del precio y devuelve el precio con descuento
-  // Devuelve el objeto "producto" al final de la función
+  // Agregar un método (función) al objeto 
+  //"producto" llamado "calcularPrecioDescuento"
+  // Este método debe multiplicar el "precio" 
+  //del "producto" 
+  //("producto.precio" o "producto[precio]") y 
+  //"porcentajeDeDescuento" para obtener el descuento
+  // El método resta el descuento del precio y 
+  //devuelve el precio con descuento
+  // Devuelve el objeto "producto" al final de 
+  //la función
   // Ejemplo:
   // producto.precio -> 20
   // producto.porcentajeDeDescuento -> 0.2 (o simplemente ".2")
@@ -214,19 +219,24 @@ function agregarMetodoCalculoDescuento(producto) {
   const storeItem = {
     precio: 80,
     porcentajeDeDescuento: 0.1,
-  }; */
-
-    const productos = {
-      calcularPrecioDescuento: function() {
-        let precios = Number(this.precio);
-        let porcentajeDeDescuentos = Number(this.porcentajeDeDescuento);
-        return precios - (precios * porcentajeDeDescuentos)
-      }
-    }    
-    return producto;
+  }; 
+  
+  
+  function agregarMetodo(objeto) {
+    objeto.nuevoMetodo = function() {
+      console.log("¡Este es el nuevo método agregado!");
+    };
+    return objeto;
   }
   
+  */
 
+  
+  producto.calcularPrecioDescuento = function() {
+    return producto.precio - (producto.precio * producto.porcentajeDeDescuento);
+  }
+  return producto;
+}
 
 // No modificar nada debajo de esta línea
 // --------------------------------

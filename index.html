@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function agregarMetodo(objeto) {
+            objeto.nuevoMetodo = function() {
+                console.log("¡Este es el nuevo método agregado!");
+            };
+
+            return objeto;
+        }
+
+        const miObjeto = {
+        propiedad: "valor"
+        };
+
+        const objetoConMetodo = agregarMetodo(miObjeto);
+
+        objetoConMetodo.nuevoMetodo(); // Llamando al nuevo método
+        console.log(objetoConMetodo);
+
+    </script>
+</body>
+</html>
