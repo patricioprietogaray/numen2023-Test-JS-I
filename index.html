@@ -7,23 +7,51 @@
 </head>
 <body>
     <script>
-        function agregarMetodo(objeto) {
-            objeto.nuevoMetodo = function() {
-                console.log("¡Este es el nuevo método agregado!");
-            };
+        
+        function saludar( saludo ){
+            return function( nombre ){
+                console.log(`Closure 1: ${saludo} ${nombre}`);
+            }
+        }
+        var saludoHola = saludar('Hola'); // Esto devuelve una función
+        saludoHola('Numen'); // 'Hola Numen'
 
-            return objeto;
+
+        function texto1(texto1) {
+            return function(texto2){
+                console.log("Closure 2: En el "+texto1 + " hay "+texto2 );
+            }
         }
 
-        const miObjeto = {
-        propiedad: "valor"
-        };
+        let textos = texto1('cielo');
+        textos('estrellas');
 
-        const objetoConMetodo = agregarMetodo(miObjeto);
 
-        objetoConMetodo.nuevoMetodo(); // Llamando al nuevo método
-        console.log(objetoConMetodo);
+        ////
+        function hacerSaludo(idioma){
+            if (idioma === 'es'){
+                return function() {
+                    console.log("Closure3: Hola, yo hablo en español!");
+                }
+            }
 
+            if (idioma === 'en'){
+                return function () {
+                    console.log("Closure 3: Hello, i speak in English!");
+                }
+            }
+        }
+
+        let esp = hacerSaludo('es');
+        let ing = hacerSaludo('en');
+
+        //llamar a una funcion vacia que es retornada en el closure
+        ing();
+        esp();
+
+        
+        // console.log("closure 3: "+esp());
+        
     </script>
 </body>
 </html>
