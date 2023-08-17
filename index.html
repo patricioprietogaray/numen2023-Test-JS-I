@@ -50,8 +50,38 @@
         esp();
 
         
-        // console.log("closure 3: "+esp());
+        //// dilema del contador
+        // variable global con funcion que suma a la variable global
+        let contador=0;
+
+        const suma = () => {
+           return contador+= 1;
+        }
         
+        suma();
+        console.log(contador);
+        suma();
+        console.log(contador);
+        suma();
+        console.log(contador);
+
+        // misma funcion con más seguridad con closures
+        const adicion = () => {
+            //seteo en cero
+            let contador = 0;
+            return function ()  {
+                //suma en 1 al contador y retorna
+                //sigue almacenado el valor del contador en memoria
+                contador+=1;
+                return contador;
+            }
+        }
+
+        // el contador retornado se acumula en mostrarAcumulado
+        const mostrarAcumulado = adicion();
+        console.log(mostrarAcumulado());
+        console.log(mostrarAcumulado());
+        console.log(mostrarAcumulado());
     </script>
 </body>
 </html>
