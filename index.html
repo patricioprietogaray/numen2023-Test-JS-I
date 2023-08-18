@@ -102,17 +102,69 @@
         // solo define propiedades y metodos.
 
         //Seudo clase
-        function Jedi() {
-            this.arma = "Sable de luz";
-            this.poder = "La fuerza";
-        }
+        // function Jedi() {
+            // this.arma = "Sable de luz";
+            // this.poder = "La fuerza";
+        // }
         
         //Creacion de instancias new funcion()
         //funcion constructora
-        let jedi = new Jedi();
-        console.log(jedi);
-        console.log("Desenfunda el "+jedi.arma+"!");
+        // let jedi = new Jedi();
+        // console.log(jedi);
+        // console.log("Desenfunda el "+jedi.arma+"!");
 
+        //funcion constructora
+        function Jedi(arma, poder) {
+            //Atributos
+            this.arma = arma;
+            this.poder = poder;
+
+            //Métodos
+            this.hablar = function () {
+                console.log("Que la fuerza te acompañe");
+            }
+        }
+
+        // instancio la funcion Jedi
+        let yoda = new Jedi("Sable de luz", "La fuerza");
+
+        //defino en el prototipo una funcion que estará
+        //disponible en todas las instancias futuras
+        Jedi.prototype.susurrar = function () {
+            console.log("Usa la fuerza Luke");
+        }
+
+        console.log(yoda);
+        console.log(yoda.arma);
+        console.log(yoda.poder);
+        yoda.hablar();
+        yoda.susurrar();
+        
+        //////////
+        //clases
+
+        //nombre sin parentesis
+        class Jedii {
+            //constructor se le pasan los argumentos
+            constructor (nombre, raza) {
+                //definicion de los atributos que tendrá 
+                // la clase.
+                this.nombre = nombre,
+                this.raza = raza
+            }
+
+            //método
+            saludar() {
+                console.log("Hola! "+ this.nombre);
+            }
+        }
+
+        let yodaa = new Jedii("Yoda", "Desconocida");
+        console.log("Yodaa: Su nombre: "+yodaa.nombre);
+        console.log("Yodaa: Su raza: "+yodaa.raza);
+        yodaa.saludar();
+
+        // diapo 21 del 306-6
 
     </script>
 </body>
