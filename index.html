@@ -82,6 +82,37 @@
         console.log(mostrarAcumulado());
         console.log(mostrarAcumulado());
         console.log(mostrarAcumulado());
+
+        // this
+        const objeto = {
+            nombre: "Contexto del Objeto",
+            imprimir: function () {
+                console.log(this.nombre);
+            }
+        }
+        objeto.imprimir();
+
+        const objeto2 = {
+            nombre: "Contexto del Objeto 2",
+            imprimir: objeto.imprimir()
+        }
+        objeto2.imprimir;
+
+        //funcion constructora no devuelve nada o crea explicitamente un objeto
+        // solo define propiedades y metodos.
+
+        //funcion constructora
+        function Jedi() {
+            this.arma = "Sable de luz";
+            this.poder = "La fuerza";
+        }
+        
+        //Creacion de instancias new funcion()
+        let jedi = new Jedi();
+        console.log(jedi);
+        console.log("Desenfunda el "+jedi.arma+"!");
+
+        
     </script>
 </body>
 </html>
