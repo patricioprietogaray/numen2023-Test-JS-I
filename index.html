@@ -166,6 +166,40 @@
 
         // diapo 21 del 306-6
 
+        function Perro(nombre, raza, color) {
+            this.nombre = nombre;
+            this.raza = raza;
+            this.color = color;
+        }
+
+        Perro.prototype.ladra = function () {
+            return "Woof!";
+        }
+
+        let firulais = new Perro("Firulais", "callejero", "marron");
+        console.log(firulais.nombre);
+        console.log(firulais.raza);
+        console.log(firulais.color);
+        console.log(firulais.ladra());
+
+        class Can {
+            constructor(nombre, raza, color) {
+                this.nombre = nombre;
+                this.raza = raza;
+                this.color = color;
+            }
+
+            ladra() {
+                return "Guau!";
+            }
+        }
+
+        let pichichu = new Can("Pichichu", "callejero", "blanco");
+        console.log(pichichu.nombre);
+        console.log(pichichu.raza);
+        console.log(pichichu.color);
+        console.log(pichichu.ladra());
+        
     </script>
 </body>
 </html>
