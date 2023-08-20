@@ -6,7 +6,7 @@
     <title>Document</title>
 </head>
 <body>
-    <script>
+    <!-- <script>
         
         function saludar( saludo ){
             return function( nombre ){
@@ -200,6 +200,34 @@
         console.log(pichichu.color);
         console.log(pichichu.ladra());
         
+    </script> -->
+
+    <script>
+
+        function crearUsuario(dato) {
+            // console.log(dato);
+            class Usuario {
+                constructor(dato) {
+                    this.usuario = dato.usuario;
+                    this.nombre = dato.nombre;
+                    this.email = dato.email;
+                    this.password = dato.password;
+                }
+                saludar() {
+                    return `Hola, mi nombre es ${this.nombre}`;
+                }
+            }
+            return Usuario;
+        }
+
+       
+
+        const Usuario = crearUsuario();
+        // console.log(Usuario);
+        const usua = new Usuario({usuario:'Pprieto', nombre: 'pato', email: 'p@p.net', password: 'pepe'});
+        console.log(usua);
+        // const user = new Usuario({usuario: 'jssamuel', nombre: 'Samuel', email: 'samuel@email.com', password: 'LoveJS' });
+        // console.log(usua.);
     </script>
 </body>
 </html>
