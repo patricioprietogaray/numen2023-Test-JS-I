@@ -34,13 +34,40 @@ function agregarMetodoPrototype(Constructor) {
 }
 
 function agregarStringInvertida() {
-  // Agrega un método al prototype de String que devuelva la misma cadena de caracteres, pero invertida.
+  // Agrega un método al prototype de String 
+  //que devuelva la misma cadena de caracteres, 
+  //pero invertida.
   // El método debe llamarse "reverse"
   // Ej: 'menem'.reverse() => menem
   // 'toni'.reverse() => 'inot'
-  // Pista: Necesitarás usar "this" dentro de "reverse"
+  // Pista: Necesitarás usar "this" dentro de 
+  //"reverse"
   // Tu código:
-  
+  // class invertir {
+  //   constructor(texto) {
+  //       this.texto = texto;
+  //       this.textoReves = "";
+  //       this.longitudTexto = texto.length;
+  //   }
+  //   reverse() {
+  //       for(let i=this.longitudTexto-1; i>=0; i--) {
+  //           this.textoReves += this.texto[i];
+  //       }
+  //       return this.textoReves;
+  //   }
+  // }
+
+  //Agrega un metodo
+  String.prototype.reverse = function() {
+    let textoReves = "";
+    for(let i=this.length-1; i>=0; i--) {
+        //seteo en vacio al inicio
+        if(this.length-1===i){this.textoReves=""}
+        
+        this.textoReves += this[i];
+    }
+    return this.textoReves;
+}
 }
 
 // ---------------------------------------------------------------------------//

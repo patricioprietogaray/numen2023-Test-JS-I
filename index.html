@@ -204,30 +204,53 @@
 
     <script>
 
-        function crearUsuario(dato) {
-            // console.log(dato);
-            class Usuario {
-                constructor(dato) {
-                    this.usuario = dato.usuario;
-                    this.nombre = dato.nombre;
-                    this.email = dato.email;
-                    this.password = dato.password;
-                }
-                saludar() {
-                    return `Hola, mi nombre es ${this.nombre}`;
-                }
+function agregarStringInvertida() {
+  // Agrega un método al prototype de String 
+  //que devuelva la misma cadena de caracteres, 
+  //pero invertida.
+  // El método debe llamarse "reverse"
+  // Ej: 'menem'.reverse() => menem
+  // 'toni'.reverse() => 'inot'
+  // Pista: Necesitarás usar "this" dentro de 
+  //"reverse"
+  // Tu código:
+    //   class invertir {
+    //     constructor(texto) {
+    //         this.texto = texto;
+    //         this.textoReves = "";
+    //         this.longitudTexto = texto.length;
+    //     }
+    //     reverse = function() {
+    //         for(let i=this.longitudTexto-1; i>=0; i--) {
+    //             this.textoReves += this.texto[i];
+    //         }
+    //         return this.textoReves;
+    //     }
+    //   }
+
+    // agregar un metodo a la funcion
+        
+        String.prototype.reverse = function() {
+            let textoReves = "";
+            for(let i=this.length-1; i>=0; i--) {
+                if(this.length-1===i){this.textoReves=""}
+                this.textoReves += this[i];
             }
-            return Usuario;
+            console.log("Entraste a la funcion: "+this.textoReves);
         }
+}
 
-       
 
-        const Usuario = crearUsuario();
-        // console.log(Usuario);
-        const usua = new Usuario({usuario:'Pprieto', nombre: 'pato', email: 'p@p.net', password: 'pepe'});
-        console.log(usua);
-        // const user = new Usuario({usuario: 'jssamuel', nombre: 'Samuel', email: 'samuel@email.com', password: 'LoveJS' });
-        // console.log(usua.);
+// const invierte = new invertir("asado");
+// console.log(invierte.reverse());
+
+agregarStringInvertida();
+const str = 'Hello';
+str.reverse();
+//     > 38 |              expect(str.reverse()).toBe('olleH');
+
+
+
     </script>
 </body>
 </html>
