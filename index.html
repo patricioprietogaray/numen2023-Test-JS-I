@@ -204,53 +204,70 @@
 
     <script>
 
-function agregarStringInvertida() {
-  // Agrega un método al prototype de String 
-  //que devuelva la misma cadena de caracteres, 
-  //pero invertida.
-  // El método debe llamarse "reverse"
-  // Ej: 'menem'.reverse() => menem
-  // 'toni'.reverse() => 'inot'
-  // Pista: Necesitarás usar "this" dentro de 
-  //"reverse"
-  // Tu código:
-    //   class invertir {
-    //     constructor(texto) {
-    //         this.texto = texto;
-    //         this.textoReves = "";
-    //         this.longitudTexto = texto.length;
-    //     }
-    //     reverse = function() {
-    //         for(let i=this.longitudTexto-1; i>=0; i--) {
-    //             this.textoReves += this.texto[i];
-    //         }
-    //         return this.textoReves;
-    //     }
-    //   }
+        // ---------------------------------------------------------------------------//
+        //Crea el constructor de la clase "Persona"
+        //Debe tener las propiedades: "nombre", "apellido", "edad" y "domicilio"
+        //Debe tener un método llamado "detalle" que nos devuelve un objeto con las propiedades de la persona y sus valores.
+        //Ej: { 
+        //   Nombre: 'Juan',
+        //   Apellido: 'Perez',
+        //   Edad: 22,
+        //   Domicilio: 'Saavedra 123'
+        //  }
 
-    // agregar un metodo a la funcion
-        
-        String.prototype.reverse = function() {
-            let textoReves = "";
-            for(let i=this.length-1; i>=0; i--) {
-                if(this.length-1===i){this.textoReves=""}
-                this.textoReves += this[i];
+        // si tengo problemas clase 01/08/23 1:10
+
+            class Persona {
+            //Escribir el constructor aquí:
+            constructor(nombre, apellido, edad, domicilio){
+                this.nombre = nombre,
+                this.apellido = apellido,
+                this.edad = edad,
+                this.domicilio = domicilio
             }
-            console.log("Entraste a la funcion: "+this.textoReves);
-        }
-}
 
+            detalle() {
+                return `{
+                Nombre: '${this.nombre}',
+                Apellido: '${this.apellido}',
+                Edad: '${this.edad}',
+                Domicilio: '${this.domicilio}',
+                }`
+            }
+            }
 
-// const invierte = new invertir("asado");
-// console.log(invierte.reverse());
+            function crearInstanciaPersona(nombre, apellido, edad, dir) {
+                //Con esta función vamos a crear una nueva persona a partir de nuestro constructor de persona (creado en el ejercicio anterior)
+                //Recibirá los valores "Juan", "Perez", 22, "Saavedra 123" para sus respectivas propiedades
+                //Devolver la nueva persona creada
+                //Tu código:
+                // const nuevaPersona = new Persona(nombre, apellido, edad, dir);
+                // return nuevaPersona;
 
-agregarStringInvertida();
-const str = 'Hello';
-str.reverse();
-//     > 38 |              expect(str.reverse()).toBe('olleH');
+                return new Persona(nombre, apellido, edad, dir);
+            }
 
+            function agregarMetodo() {
+            //La función agrega un método "datos" a la clase Persona que toma el nombre y la edad de la persona y devuelve: 
+            //Ej: "Juan, 22 años"
+            //Tu código:
+            // let personas = crearInstanciaPersona();
+            // let nombre = personas;
+                class Persona {
+                    datos() {
+                        return `"${this.nombre}, ${this.edad} años"`;
+                    }
+                }
+                // Persona.prototype.datos = () => {
+                //     const person = new Persona(this.nombre, 'perez', 22, 'lobos 123');
+                //     console.log(`"${person.nombre}, ${person.edad} años"`);
+                // }
+            }
 
-
+        // crearInstanciaPersona("Juan", "Scalise", 47, "Francisco de las Carreras 454");
+        // console.log(Persona.detalle());
+        // const resp = agregarMetodo();
+        // console.log(resp);
     </script>
 </body>
 </html>
